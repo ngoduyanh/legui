@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.checkbox;
 import com.spinyowl.legui.component.CheckBox;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import java.util.Objects;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -11,7 +11,7 @@ public class CheckBoxWidthChangeEvent extends Event<CheckBox> {
 
   private final float width;
 
-  public CheckBoxWidthChangeEvent(CheckBox targetComponent, GLFWContext context, Frame frame,
+  public CheckBoxWidthChangeEvent(CheckBox targetComponent, Context context, Frame frame,
                                   float width) {
     super(targetComponent, context, frame);
     this.width = width;

@@ -5,7 +5,8 @@ import static com.spinyowl.legui.system.renderer.nvg.util.NvgRenderUtils.getBord
 
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.icon.ImageIcon;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.NvgBasedContext;
 import com.spinyowl.legui.system.renderer.ImageRenderer;
 import com.spinyowl.legui.system.renderer.nvg.NvgIconRenderer;
 import java.util.HashMap;
@@ -15,7 +16,7 @@ import org.joml.Vector2f;
 public class NvgImageIconRenderer<I extends ImageIcon> extends NvgIconRenderer<I> {
 
   @Override
-  protected void renderIcon(I icon, Component component, GLFWContext context, long nanovg) {
+  protected void renderIcon(I icon, Component component, NvgBasedContext context, long nanovg) {
     if (!component.isVisible() || icon == null || icon.getImage() == null) {
       return;
     }

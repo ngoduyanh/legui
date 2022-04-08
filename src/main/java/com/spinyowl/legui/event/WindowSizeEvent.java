@@ -2,7 +2,7 @@ package com.spinyowl.legui.event;
 
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -14,7 +14,7 @@ public class WindowSizeEvent<T extends Component> extends Event<T> {
   private final int width;
   private final int height;
 
-  public WindowSizeEvent(T component, GLFWContext context, Frame frame, int width, int height) {
+  public WindowSizeEvent(T component, Context context, Frame frame, int width, int height) {
     super(component, context, frame);
     this.width = width;
     this.height = height;

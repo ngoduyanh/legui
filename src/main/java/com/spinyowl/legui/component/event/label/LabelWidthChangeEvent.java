@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.label;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.Label;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import java.util.Objects;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -11,7 +11,7 @@ public class LabelWidthChangeEvent extends Event<Label> {
 
   private final float width;
 
-  public LabelWidthChangeEvent(Label targetComponent, GLFWContext context, Frame frame, float width) {
+  public LabelWidthChangeEvent(Label targetComponent, Context context, Frame frame, float width) {
     super(targetComponent, context, frame);
     this.width = width;
   }

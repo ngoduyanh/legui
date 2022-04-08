@@ -1,7 +1,8 @@
 package com.spinyowl.legui.system.renderer.nvg.image;
 
 import com.spinyowl.legui.image.StbBackedLoadableImage;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.NvgBasedContext;
 import com.spinyowl.legui.system.renderer.nvg.NvgImageReferenceManager;
 import com.spinyowl.legui.system.renderer.nvg.NvgImageRenderer;
 import java.nio.ByteBuffer;
@@ -59,7 +60,7 @@ public class NvgStbBackedLoadableImageRenderer extends NvgImageRenderer<StbBacke
    */
   @Override
   protected void renderImage(StbBackedLoadableImage image, Vector2fc position, Vector2fc size,
-                             Map<String, Object> properties, GLFWContext context, long nanovg) {
+                             Map<String, Object> properties, NvgBasedContext context, long nanovg) {
 
     NvgImageReferenceManager manager = NvgImageReferenceManager.getInstance();
     int imageRef = manager.getImageReference(image, nanovg);

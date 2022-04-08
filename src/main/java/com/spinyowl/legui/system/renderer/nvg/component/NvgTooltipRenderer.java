@@ -25,7 +25,7 @@ import com.spinyowl.legui.component.optional.align.VerticalAlign;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.style.Style;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgColorUtil;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class NvgTooltipRenderer extends NvgDefaultComponentRenderer<Tooltip> {
 
 
   @Override
-  public void renderSelf(Tooltip component, GLFWContext context, long nanovg) {
+  public void renderSelf(Tooltip component, Context context, long nanovg) {
     createScissor(nanovg, component);
     {
       Style style = component.getStyle();

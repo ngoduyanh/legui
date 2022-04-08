@@ -7,6 +7,7 @@ import static com.spinyowl.legui.event.MouseClickEvent.MouseClickAction.RELEASE;
 import com.spinyowl.legui.component.SplitPanel;
 import com.spinyowl.legui.component.optional.Orientation;
 import com.spinyowl.legui.cursor.Cursor;
+import com.spinyowl.legui.cursor.CursorService;
 import com.spinyowl.legui.cursor.CursorServiceProvider;
 import com.spinyowl.legui.event.CursorEnterEvent;
 import com.spinyowl.legui.event.Event;
@@ -41,7 +42,7 @@ public class SplitPanelSeparatorListenerDelegate implements EventListener<Event>
       }
       if (e.getAction() == RELEASE) {
         dragging = false;
-        CursorServiceProvider.getInstance().setCursor(Cursor.ARROW, e.getContext());
+        e.getContext().getCursorService().setCursor(Cursor.ARROW, e.getContext());
       }
     }
 

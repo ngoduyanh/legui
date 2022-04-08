@@ -3,7 +3,8 @@ package com.spinyowl.legui.system.renderer.nvg.border;
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.style.Style;
 import com.spinyowl.legui.style.border.SimpleLineBorder;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.NvgBasedContext;
 import com.spinyowl.legui.system.renderer.nvg.NvgBorderRenderer;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgRenderUtils;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgShapes;
@@ -14,7 +15,7 @@ import org.joml.Vector4f;
 public class NvgSimpleLineBorderRenderer extends NvgBorderRenderer<SimpleLineBorder> {
 
   @Override
-  protected void renderBorder(SimpleLineBorder border, Component component, GLFWContext context,
+  protected void renderBorder(SimpleLineBorder border, Component component, NvgBasedContext context,
       long nanovg) {
     if (border.isEnabled()) {
       float thickness = border.getThickness();

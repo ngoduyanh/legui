@@ -15,14 +15,14 @@ import com.spinyowl.legui.component.optional.align.VerticalAlign;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.style.Style;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
 
 public class NvgButtonRenderer extends NvgDefaultComponentRenderer<Button> {
 
   @Override
-  protected void renderSelf(Button component, GLFWContext context, long nanovg) {
+  protected void renderSelf(Button component, Context context, long nanovg) {
     createScissor(nanovg, component);
     {
       Vector2f pos = component.getAbsolutePosition();

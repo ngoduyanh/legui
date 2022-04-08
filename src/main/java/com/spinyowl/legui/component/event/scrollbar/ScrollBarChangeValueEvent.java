@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.scrollbar;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.ScrollBar;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -15,7 +15,7 @@ public class ScrollBarChangeValueEvent<T extends ScrollBar> extends Event<T> {
   private final float oldValue;
   private final float newValue;
 
-  public ScrollBarChangeValueEvent(T component, GLFWContext context, Frame frame, float oldValue,
+  public ScrollBarChangeValueEvent(T component, Context context, Frame frame, float oldValue,
                                    float newValue) {
     super(component, context, frame);
     this.oldValue = oldValue;

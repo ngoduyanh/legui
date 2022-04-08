@@ -11,7 +11,7 @@ import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.input.Mouse;
 import com.spinyowl.legui.input.Mouse.MouseButton;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -27,7 +27,7 @@ public class MouseClickEvent<T extends Component> extends Event<T> {
   private final Vector2f absolutePosition;
   private final int mods;
 
-  public MouseClickEvent(T component, GLFWContext context, Frame frame, MouseClickAction action,
+  public MouseClickEvent(T component, Context context, Frame frame, MouseClickAction action,
                          MouseButton button, Vector2f position,
                          Vector2f absolutePosition, int mods) {
     super(component, context, frame);

@@ -12,7 +12,7 @@ import com.spinyowl.legui.component.ScrollBar;
 import com.spinyowl.legui.component.optional.align.HorizontalAlign;
 import com.spinyowl.legui.component.optional.align.VerticalAlign;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgShapes;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgText;
 import org.joml.Vector2f;
@@ -28,7 +28,7 @@ public class NvgScrollBarRenderer extends NvgDefaultComponentRenderer<ScrollBar>
   private static final String T = cpToStr(0xE5CE);
 
   @Override
-  public void renderSelf(ScrollBar scrollBar, GLFWContext context, long nanovg) {
+  public void renderSelf(ScrollBar scrollBar, Context context, long nanovg) {
     createScissor(nanovg, scrollBar);
     {
       nvgSave(nanovg);

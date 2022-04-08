@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.component;
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -14,7 +14,7 @@ public class ChangePositionEvent<T extends Component> extends Event<T> {
   private final Vector2fc oldPosition;
   private final Vector2fc newPosition;
 
-  public ChangePositionEvent(T targetComponent, GLFWContext context, Frame frame, Vector2fc oldPosition,
+  public ChangePositionEvent(T targetComponent, Context context, Frame frame, Vector2fc oldPosition,
                              Vector2fc newPosition) {
     super(targetComponent, context, frame);
     this.oldPosition = oldPosition;

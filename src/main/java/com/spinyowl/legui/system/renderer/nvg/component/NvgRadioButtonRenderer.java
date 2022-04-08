@@ -14,14 +14,14 @@ import com.spinyowl.legui.component.optional.align.VerticalAlign;
 import com.spinyowl.legui.icon.Icon;
 import com.spinyowl.legui.style.Style;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
 
 public class NvgRadioButtonRenderer extends NvgDefaultComponentRenderer<RadioButton> {
 
   @Override
-  public void renderSelf(RadioButton radioButton, GLFWContext context, long nanovg) {
+  public void renderSelf(RadioButton radioButton, Context context, long nanovg) {
     createScissor(nanovg, radioButton);
     {
       // default renderer used

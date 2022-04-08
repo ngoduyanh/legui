@@ -5,7 +5,8 @@ import static com.spinyowl.legui.style.util.StyleUtilities.getStyle;
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.icon.CharIcon;
 import com.spinyowl.legui.style.Style;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.NvgBasedContext;
 import com.spinyowl.legui.system.renderer.nvg.NvgIconRenderer;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgText;
 import com.spinyowl.legui.util.TextUtil;
@@ -15,7 +16,7 @@ import org.joml.Vector4f;
 public class NvgCharIconRenderer<I extends CharIcon> extends NvgIconRenderer<I> {
 
   @Override
-  protected void renderIcon(I icon, Component component, GLFWContext context, long nanovg) {
+  protected void renderIcon(I icon, Component component, NvgBasedContext context, long nanovg) {
     if (!component.isVisible() || icon == null || icon.getFont() == null) {
       return;
     }

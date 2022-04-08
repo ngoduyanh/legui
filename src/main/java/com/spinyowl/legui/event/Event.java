@@ -2,7 +2,7 @@ package com.spinyowl.legui.event;
 
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -12,10 +12,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public abstract class Event<T extends Component> {
 
   private final T targetComponent;
-  private final GLFWContext context;
+  private final Context context;
   private final Frame frame;
 
-  public Event(T targetComponent, GLFWContext context, Frame frame) {
+  public Event(T targetComponent, Context context, Frame frame) {
     this.targetComponent = targetComponent;
     this.context = context;
     this.frame = frame;
@@ -29,7 +29,7 @@ public abstract class Event<T extends Component> {
     return targetComponent;
   }
 
-  public GLFWContext getContext() {
+  public Context getContext() {
     return context;
   }
 

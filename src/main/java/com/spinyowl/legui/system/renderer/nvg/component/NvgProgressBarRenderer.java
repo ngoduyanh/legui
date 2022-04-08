@@ -6,7 +6,7 @@ import static com.spinyowl.legui.system.renderer.nvg.util.NvgRenderUtils.resetSc
 import static org.lwjgl.nanovg.NanoVG.nvgSave;
 
 import com.spinyowl.legui.component.ProgressBar;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgShapes;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
@@ -15,7 +15,7 @@ import org.joml.Vector4f;
 public class NvgProgressBarRenderer extends NvgDefaultComponentRenderer<ProgressBar> {
 
   @Override
-  public void renderSelf(ProgressBar progressBar, GLFWContext leguiContext, long nanovg) {
+  public void renderSelf(ProgressBar progressBar, Context leguiContext, long nanovg) {
     createScissor(nanovg, progressBar);
     {
       nvgSave(nanovg);

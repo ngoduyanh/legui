@@ -24,7 +24,7 @@ import com.spinyowl.legui.component.optional.align.VerticalAlign;
 import com.spinyowl.legui.input.Mouse;
 import com.spinyowl.legui.style.Style;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgColorUtil;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgShapes;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgText;
@@ -48,7 +48,7 @@ public class NvgPasswordInputRenderer extends NvgDefaultComponentRenderer<Passwo
   private final Vector4f caretColor = new Vector4f(0, 0, 0, 0.5f);
 
   @Override
-  public void renderSelf(PasswordInput component, GLFWContext leguiContext, long nanovg) {
+  public void renderSelf(PasswordInput component, Context leguiContext, long nanovg) {
     runWithScissor(nanovg, component, () -> {
       Vector2f pos = component.getAbsolutePosition();
       Vector2f size = component.getSize();
@@ -82,7 +82,7 @@ public class NvgPasswordInputRenderer extends NvgDefaultComponentRenderer<Passwo
    * @param rect         rectangle in which should be rendered password.
    * @param bc           background color.
    */
-  private void renderText(GLFWContext leguiContext, long context, PasswordInput gui, Vector2f size,
+  private void renderText(Context leguiContext, long context, PasswordInput gui, Vector2f size,
                           Vector4f rect, Vector4f bc) {
     Vector4f textColor = getStyle(gui, Style::getTextColor);
     try (

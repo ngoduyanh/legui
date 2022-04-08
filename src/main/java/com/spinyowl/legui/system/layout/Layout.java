@@ -4,6 +4,7 @@ import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.event.component.ChangePositionEvent;
 import com.spinyowl.legui.component.event.component.ChangeSizeEvent;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.context.GLFWContext;
 
 /**
@@ -29,6 +30,6 @@ public interface Layout {
    * @param frame   component frame (for event generation).
    * @param context context (used for event generation).
    */
-  void layout(Component parent, Frame frame, GLFWContext context);
+  void layout(Component parent, Frame frame, Context context);
 
 }

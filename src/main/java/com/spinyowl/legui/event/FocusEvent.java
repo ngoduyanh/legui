@@ -2,7 +2,7 @@ package com.spinyowl.legui.event;
 
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -25,7 +25,7 @@ public class FocusEvent<T extends Component> extends Event<T> {
    * @param focused   state of component.
    * @param frame     frame.
    */
-  public FocusEvent(T component, GLFWContext context, Frame frame, Component nextFocus,
+  public FocusEvent(T component, Context context, Frame frame, Component nextFocus,
                     boolean focused) {
     super(component, context, frame);
     this.focused = focused;

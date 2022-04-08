@@ -5,7 +5,7 @@ import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.input.KeyAction;
 import com.spinyowl.legui.input.KeyMod;
 import com.spinyowl.legui.input.KeyboardKey;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import java.util.Arrays;
 import java.util.Set;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -20,7 +20,7 @@ public class KeyboardEvent<T extends Component> extends Event<T> {
   private final KeyboardKey key;
   private final Set<KeyMod> mods;
 
-  public KeyboardEvent(T component, GLFWContext context, Frame frame, KeyAction action, KeyboardKey key,
+  public KeyboardEvent(T component, Context context, Frame frame, KeyAction action, KeyboardKey key,
                        Set<KeyMod> mods) {
     super(component, context, frame);
     this.action = action;

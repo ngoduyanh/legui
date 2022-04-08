@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.textinput;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.TextInput;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -20,7 +20,7 @@ public class TextInputContentChangeEvent<T extends TextInput> extends Event<T> {
    */
   private final String newValue;
 
-  public TextInputContentChangeEvent(T component, GLFWContext context, Frame frame, String oldValue,
+  public TextInputContentChangeEvent(T component, Context context, Frame frame, String oldValue,
                                      String newValue) {
     super(component, context, frame);
     this.oldValue = oldValue;

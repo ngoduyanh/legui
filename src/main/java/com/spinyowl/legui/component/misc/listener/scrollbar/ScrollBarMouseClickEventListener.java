@@ -11,7 +11,7 @@ import com.spinyowl.legui.event.MouseClickEvent;
 import com.spinyowl.legui.input.Mouse;
 import com.spinyowl.legui.listener.MouseClickEventListener;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.joml.Vector2f;
 
 /**
@@ -102,7 +102,7 @@ public class ScrollBarMouseClickEventListener implements MouseClickEventListener
     } else if (newValue < minValue) {
       valueToUse = minValue;
     }
-    GLFWContext context = event.getContext();
+    Context context = event.getContext();
     Frame frame = event.getFrame();
     float curValue = scrollBar.getCurValue();
     EventProcessorProvider.getInstance().pushEvent(

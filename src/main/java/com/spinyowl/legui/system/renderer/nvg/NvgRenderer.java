@@ -18,7 +18,8 @@ import com.spinyowl.legui.image.Image;
 import com.spinyowl.legui.style.Border;
 import com.spinyowl.legui.style.font.Font;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.NvgBasedContext;
 import com.spinyowl.legui.system.renderer.AbstractRenderer;
 import com.spinyowl.legui.system.renderer.BorderRenderer;
 import com.spinyowl.legui.system.renderer.ComponentRenderer;
@@ -65,7 +66,7 @@ public class NvgRenderer extends AbstractRenderer {
    * @param component component for which should be rendered border.
    * @param context   context.
    */
-  public static void renderBorder(Component component, GLFWContext context) {
+  public static void renderBorder(Component component, Context context) {
     Border border = component.getStyle().getBorder();
     if (border != null && border.isEnabled()) {
       // Render border
@@ -82,7 +83,7 @@ public class NvgRenderer extends AbstractRenderer {
    * @param context   context.
    * @param nanovg    nanovg context.
    */
-  public static void renderBorderWScissor(Component component, GLFWContext context, long nanovg) {
+  public static void renderBorderWScissor(Component component, Context context, long nanovg) {
     NvgRenderUtils.createScissor(nanovg, component);
     {
       renderBorder(component, context);
@@ -97,7 +98,7 @@ public class NvgRenderer extends AbstractRenderer {
    * @param component icon owner.
    * @param context   context.
    */
-  public static void renderIcon(Icon icon, Component component, GLFWContext context) {
+  public static void renderIcon(Icon icon, Component component, Context context) {
     if (icon != null && component != null) {
       RendererProvider.getInstance().getIconRenderer(icon.getClass())
           .render(icon, component, context);
@@ -113,7 +114,7 @@ public class NvgRenderer extends AbstractRenderer {
    * @param context  context.
    */
   public static void renderImage(Image image, Vector2fc position, Vector2fc size,
-      Map<String, Object> properties, GLFWContext context) {
+      Map<String, Object> properties, Context context) {
     if (image != null) {
       RendererProvider.getInstance().getImageRenderer(image.getClass())
           .render(image, position, size, properties, context);
@@ -151,28 +152,29 @@ public class NvgRenderer extends AbstractRenderer {
   }
 
   @Override
-  protected void preRender(GLFWContext context) {
+  protected void preRender(Context context) {
     loadFontsToNvg();
-    context.getContextData().put(NVG_CONTEXT, nvgContext);
+    NvgBasedContext nvgBasedContext = (NvgBasedContext) context;
+    nvgBasedContext.setNanoVGContext(nvgContext);
 
     glDisable(GL_DEPTH_TEST);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    Vector2i windowSize = context.getWindowSize();
-    nvgBeginFrame(nvgContext, windowSize.x, windowSize.y, context.getPixelRatio());
+    Vector2i windowSize = nvgBasedContext.getWindowSize();
+    nvgBeginFrame(nvgContext, windowSize.x, windowSize.y, nvgBasedContext.getPixelRatio());
   }
 
   @Override
-  protected void postRender(GLFWContext context) {
+  protected void postRender(Context context) {
     nvgEndFrame(nvgContext);
 
     glDisable(GL_BLEND);
     glEnable(GL_DEPTH_TEST);
 
     imageReferenceManager.removeOldImages(nvgContext);
-    context.getContextData().remove(NVG_CONTEXT);
-    context.getContextData().remove(IMAGE_REFERENCE_MANAGER);
+    ((NvgBasedContext) context).setNanoVGContext(0L);
+//    context.getContextData().remove(IMAGE_REFERENCE_MANAGER);
   }
 
   @Override

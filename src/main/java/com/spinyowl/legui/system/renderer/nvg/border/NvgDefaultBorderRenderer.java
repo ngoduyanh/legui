@@ -3,7 +3,8 @@ package com.spinyowl.legui.system.renderer.nvg.border;
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.style.Border;
 import com.spinyowl.legui.style.color.ColorConstants;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.NvgBasedContext;
 import com.spinyowl.legui.system.renderer.nvg.NvgBorderRenderer;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgShapes;
 import org.joml.Vector2f;
@@ -13,7 +14,7 @@ import org.joml.Vector4f;
 public class NvgDefaultBorderRenderer extends NvgBorderRenderer {
 
   @Override
-  protected void renderBorder(Border border, Component component, GLFWContext context, long nanovg) {
+  protected void renderBorder(Border border, Component component, NvgBasedContext context, long nanovg) {
     if (!component.isVisible()) {
       return;
     }

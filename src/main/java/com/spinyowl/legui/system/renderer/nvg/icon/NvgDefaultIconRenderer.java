@@ -5,7 +5,8 @@ import static com.spinyowl.legui.system.renderer.nvg.util.NvgRenderUtils.getBord
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.icon.Icon;
 import com.spinyowl.legui.style.color.ColorConstants;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.NvgBasedContext;
 import com.spinyowl.legui.system.renderer.nvg.NvgIconRenderer;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgShapes;
 import org.joml.Vector2f;
@@ -15,7 +16,7 @@ import org.joml.Vector4f;
 public class NvgDefaultIconRenderer extends NvgIconRenderer {
 
   @Override
-  protected void renderIcon(Icon icon, Component component, GLFWContext context, long nanovg) {
+  protected void renderIcon(Icon icon, Component component, NvgBasedContext context, long nanovg) {
     if (!component.isVisible()) {
       return;
     }

@@ -8,7 +8,7 @@ import static org.lwjgl.nanovg.NanoVG.nvgSave;
 
 import com.spinyowl.legui.component.Slider;
 import com.spinyowl.legui.component.optional.Orientation;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgShapes;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
@@ -31,7 +31,7 @@ public class NvgSliderRenderer extends NvgDefaultComponentRenderer<Slider> {
    * @param nanovg  nanoVG context.
    */
   @Override
-  public void renderSelf(Slider slider, GLFWContext context, long nanovg) {
+  public void renderSelf(Slider slider, Context context, long nanovg) {
     createScissor(nanovg, slider);
     {
       nvgSave(nanovg);

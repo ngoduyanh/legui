@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.textinput;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.TextInput;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import java.util.Objects;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -11,7 +11,7 @@ public class TextInputWidthChangeEvent extends Event<TextInput> {
 
   private final float width;
 
-  public TextInputWidthChangeEvent(TextInput targetComponent, GLFWContext context, Frame frame,
+  public TextInputWidthChangeEvent(TextInput targetComponent, Context context, Frame frame,
                                    float width) {
     super(targetComponent, context, frame);
     this.width = width;

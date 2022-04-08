@@ -28,7 +28,7 @@ import com.spinyowl.legui.input.Mouse;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.style.Style;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgColorUtil;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgShapes;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgText;
@@ -55,7 +55,7 @@ public class NvgTextAreaFieldRenderer extends NvgDefaultComponentRenderer<TextAr
   private final Vector4f caretColor = new Vector4f(0, 0, 0, 0.5f);
 
   @Override
-  public void renderSelf(TextAreaField component, GLFWContext context, long nanovg) {
+  public void renderSelf(TextAreaField component, Context context, long nanovg) {
     runWithScissor(nanovg, component, () -> {
       Vector2f pos = component.getAbsolutePosition();
       Vector2f size = component.getSize();
@@ -80,7 +80,7 @@ public class NvgTextAreaFieldRenderer extends NvgDefaultComponentRenderer<TextAr
     });
   }
 
-  private void renderText(GLFWContext leguiContext, long context, TextAreaField gui, Vector4f rect,
+  private void renderText(Context leguiContext, long context, TextAreaField gui, Vector4f rect,
                           Vector4f viewportRect, Vector4f bc) {
 
     String font = getStyle(gui, Style::getFont, FontRegistry.getDefaultFont());

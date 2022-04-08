@@ -2,7 +2,7 @@ package com.spinyowl.legui.event;
 
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -14,7 +14,7 @@ public class WindowPosEvent<T extends Component> extends Event<T> {
   private final int xpos;
   private final int ypos;
 
-  public WindowPosEvent(T component, GLFWContext context, Frame frame, int xpos, int ypos) {
+  public WindowPosEvent(T component, Context context, Frame frame, int xpos, int ypos) {
     super(component, context, frame);
     this.xpos = xpos;
     this.ypos = ypos;

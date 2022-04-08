@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.label;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.Label;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -20,7 +20,7 @@ public class LabelContentChangeEvent extends Event<Label> {
    */
   private final String newValue;
 
-  public LabelContentChangeEvent(Label component, GLFWContext context, Frame frame, String oldValue,
+  public LabelContentChangeEvent(Label component, Context context, Frame frame, String oldValue,
                                  String newValue) {
     super(component, context, frame);
     this.oldValue = oldValue;

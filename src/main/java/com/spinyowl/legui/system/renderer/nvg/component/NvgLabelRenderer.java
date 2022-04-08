@@ -15,7 +15,7 @@ import com.spinyowl.legui.component.optional.align.VerticalAlign;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.style.Style;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgText;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
@@ -23,7 +23,7 @@ import org.joml.Vector4f;
 public class NvgLabelRenderer extends NvgDefaultComponentRenderer<Label> {
 
   @Override
-  public void renderSelf(Label label, GLFWContext context, long nanovg) {
+  public void renderSelf(Label label, Context context, long nanovg) {
     createScissor(nanovg, label);
     {
       Style style = label.getStyle();

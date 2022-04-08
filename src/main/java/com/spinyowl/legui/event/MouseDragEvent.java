@@ -2,7 +2,7 @@ package com.spinyowl.legui.event;
 
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -14,7 +14,7 @@ public class MouseDragEvent<T extends Component> extends Event<T> {
 
   private final Vector2f delta;
 
-  public MouseDragEvent(T component, GLFWContext context, Frame frame, Vector2f delta) {
+  public MouseDragEvent(T component, Context context, Frame frame, Vector2f delta) {
     super(component, context, frame);
     this.delta = delta;
   }
