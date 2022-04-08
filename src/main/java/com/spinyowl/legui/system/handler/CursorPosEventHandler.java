@@ -8,7 +8,8 @@ import com.spinyowl.legui.event.Event;
 import com.spinyowl.legui.event.MouseDragEvent;
 import com.spinyowl.legui.input.Mouse;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.event.SystemCursorPosEvent;
 import java.util.Collections;
 import java.util.List;
@@ -26,7 +27,7 @@ public class CursorPosEventHandler extends AbstractSystemEventHandler<SystemCurs
    * @param frame   target frame for event.
    * @param context context
    */
-  protected void preHandle(SystemCursorPosEvent event, Frame frame, GLFWContext context) {
+  protected void preHandle(SystemCursorPosEvent event, Frame frame, Context context) {
     Vector2f cursorPosition = new Vector2f(event.fx, event.fy);
     Mouse.setCursorPositionPrev(new Vector2f(Mouse.getCursorPosition()));
     Mouse.setCursorPosition(cursorPosition);
@@ -75,7 +76,7 @@ public class CursorPosEventHandler extends AbstractSystemEventHandler<SystemCurs
    * @return true if event processed and it shouldn't be processed for other underlying layers.
    */
   @Override
-  protected boolean handle(SystemCursorPosEvent event, Layer layer, GLFWContext context, Frame frame) {
+  protected boolean handle(SystemCursorPosEvent event, Layer layer, Context context, Frame frame) {
     List<Component> childComponents = layer.getChildComponents();
     for (Component child : childComponents) {
       handle(child, context, frame);
@@ -90,7 +91,7 @@ public class CursorPosEventHandler extends AbstractSystemEventHandler<SystemCurs
    * @param context   context.
    * @param frame     frame.
    */
-  private void handle(Component component, GLFWContext context, Frame frame) {
+  private void handle(Component component, Context context, Frame frame) {
     if (component.isEmpty()) {
       if ((Mouse.MouseButton.MOUSE_BUTTON_LEFT.isPressed()
           || Mouse.MouseButton.MOUSE_BUTTON_RIGHT.isPressed()) &&

@@ -3,7 +3,7 @@ package com.spinyowl.legui.system.layout;
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.style.Style.DisplayType;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 
 /**
  * Layout manager. Used to layout component and it's child components..
@@ -56,7 +56,7 @@ public abstract class LayoutManager {
    * @param frame   frame to lay out.
    * @param context context (used for event generation).
    */
-  public abstract void layout(Frame frame, GLFWContext context);
+  public abstract void layout(Frame frame, Context context);
 
   /**
    * Used to layout component and all of his child components.
@@ -74,5 +74,5 @@ public abstract class LayoutManager {
    * @param frame     component frame (for event generation if needed).
    * @param context   context (used for event generation).
    */
-  public abstract void layout(Component component, Frame frame, GLFWContext context);
+  public abstract void layout(Component component, Frame frame, Context context);
 }

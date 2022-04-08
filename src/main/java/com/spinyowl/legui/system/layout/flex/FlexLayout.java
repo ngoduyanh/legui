@@ -59,7 +59,6 @@ import com.spinyowl.legui.style.length.Length;
 import com.spinyowl.legui.style.length.LengthType;
 import com.spinyowl.legui.style.length.Unit;
 import com.spinyowl.legui.system.context.Context;
-import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.layout.Layout;
 import java.util.ArrayList;
 import java.util.List;

@@ -5,7 +5,6 @@ import com.spinyowl.legui.system.context.GLFWContext;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.spinyowl.legui.system.context.NvgBasedContext;
 import org.lwjgl.glfw.GLFW;
 
 public class GLFWCursorServiceImpl implements CursorService {

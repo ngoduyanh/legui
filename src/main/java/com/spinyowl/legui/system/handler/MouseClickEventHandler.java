@@ -14,7 +14,8 @@ import com.spinyowl.legui.event.MouseClickEvent;
 import com.spinyowl.legui.input.Mouse;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.style.Style.DisplayType;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.event.SystemMouseClickEvent;
 import java.util.Collections;
 import java.util.List;
@@ -25,7 +26,7 @@ import org.lwjgl.glfw.GLFW;
 public class MouseClickEventHandler implements SystemEventHandler<SystemMouseClickEvent> {
 
   @Override
-  public void handle(SystemMouseClickEvent event, Frame frame, GLFWContext ctx) {
+  public void handle(SystemMouseClickEvent event, Frame frame, Context ctx) {
     Mouse.MouseButton btn = Mouse.MouseButton.getByCode(event.button);
     btn.setPressed(event.action != GLFW_RELEASE);
     Vector2f cursorPos = Mouse.getCursorPosition();
@@ -111,7 +112,7 @@ public class MouseClickEventHandler implements SystemEventHandler<SystemMouseCli
     }
   }
 
-  private void removeFocus(Component targetComponent, Frame frame, GLFWContext context) {
+  private void removeFocus(Component targetComponent, Frame frame, Context context) {
     List<Layer> allLayers = frame.getAllLayers();
     for (Layer layer : allLayers) {
       List<Component> childComponents = layer.getChildComponents();
@@ -121,7 +122,7 @@ public class MouseClickEventHandler implements SystemEventHandler<SystemMouseCli
     }
   }
 
-  private void removeFocus(Component focused, Component component, GLFWContext context, Frame frame) {
+  private void removeFocus(Component focused, Component component, Context context, Frame frame) {
     if (component != focused && component.isVisible() && component.isFocused()) {
       component.setFocused(false);
       component.setPressed(false);

@@ -4,7 +4,7 @@ import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.Layer;
 import com.spinyowl.legui.style.Style.DisplayType;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.layout.flex.FlexLayout;
 import com.spinyowl.legui.util.Utilites;
 import java.util.List;
@@ -29,7 +29,7 @@ public class DefaultLayoutManager extends LayoutManager {
    * @param context context (used for event generation).
    */
   @Override
-  public void layout(Frame frame, GLFWContext context) {
+  public void layout(Frame frame, Context context) {
     for (Layer layer : frame.getAllLayers()) {
       layout(layer, frame, context);
     }
@@ -54,7 +54,7 @@ public class DefaultLayoutManager extends LayoutManager {
    * @param frame     component frame (for event generation if needed).
    * @param context   context (used for event generation).
    */
-  public void layout(Component component, Frame frame, GLFWContext context) {
+  public void layout(Component component, Frame frame, Context context) {
     if (component != null && component.isVisible() && Utilites.visibleInParents(component)) {
       Layout layout = layoutMap.get(component.getStyle().getDisplay());
       if (layout != null) {

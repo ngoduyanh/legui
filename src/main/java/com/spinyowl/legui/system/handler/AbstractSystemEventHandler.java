@@ -3,7 +3,8 @@ package com.spinyowl.legui.system.handler;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.Layer;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.event.SystemEvent;
 import java.util.Collections;
 import java.util.List;
@@ -16,15 +17,13 @@ public abstract class AbstractSystemEventHandler<E extends SystemEvent> implemen
     SystemEventHandler<E> {
 
   /**
-   * Default implementation of event handler {@link SystemEventHandler#handle(SystemEvent, Frame,
-   * GLFWContext)} method. Used to handle events and check if event should be passed to underlying layer
+   * Default implementation of event handler {@link SystemEventHandler#handle(SystemEvent, Frame, Context)} method. Used to handle events and check if event should be passed to underlying layer
    * or not.
-   *
-   * @param event   event to handle.
+   *  @param event   event to handle.
    * @param frame   target frame for event.
    * @param context context.
    */
-  public final void handle(E event, Frame frame, GLFWContext context) {
+  public final void handle(E event, Frame frame, Context context) {
     preHandle(event, frame, context);
     List<Layer> layers = frame.getAllLayers();
     Collections.reverse(layers);
@@ -51,7 +50,7 @@ public abstract class AbstractSystemEventHandler<E extends SystemEvent> implemen
    * @param frame   target frame for event.
    * @param context context.
    */
-  protected void preHandle(E event, Frame frame, GLFWContext context) {
+  protected void preHandle(E event, Frame frame, Context context) {
     // This method should be overrided to pre-handle some event.
   }
 
@@ -65,7 +64,7 @@ public abstract class AbstractSystemEventHandler<E extends SystemEvent> implemen
    * @param frame   frame.
    * @return true if shouldn't be processed in other underlying layers.
    */
-  protected boolean handle(E event, Layer layer, GLFWContext context, Frame frame) {
+  protected boolean handle(E event, Layer layer, Context context, Frame frame) {
     return false;
   }
 
@@ -76,7 +75,7 @@ public abstract class AbstractSystemEventHandler<E extends SystemEvent> implemen
    * @param frame   target frame for event.
    * @param context context.
    */
-  protected void postHandle(E event, Frame frame, GLFWContext context) {
+  protected void postHandle(E event, Frame frame, Context context) {
     // This method should be overrided to post-handle some event.
   }
 }

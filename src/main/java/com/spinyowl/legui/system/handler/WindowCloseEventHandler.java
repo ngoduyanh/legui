@@ -5,7 +5,7 @@ import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.Layer;
 import com.spinyowl.legui.event.WindowCloseEvent;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
-import com.spinyowl.legui.system.context.GLFWContext;
+import com.spinyowl.legui.system.context.Context;
 import com.spinyowl.legui.system.event.SystemWindowCloseEvent;
 import java.util.List;
 
@@ -13,13 +13,13 @@ import java.util.List;
 public class WindowCloseEventHandler extends AbstractSystemEventHandler<SystemWindowCloseEvent> {
 
   @Override
-  protected boolean handle(SystemWindowCloseEvent event, Layer layer, GLFWContext context,
+  protected boolean handle(SystemWindowCloseEvent event, Layer layer, Context context,
       Frame frame) {
     pushEvent(layer, context, frame);
     return false;
   }
 
-  private void pushEvent(Component component, GLFWContext context, Frame frame) {
+  private void pushEvent(Component component, Context context, Frame frame) {
     if (!(component.isVisible())) {
       return;
     }

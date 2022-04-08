@@ -5,7 +5,6 @@ import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.event.component.ChangePositionEvent;
 import com.spinyowl.legui.component.event.component.ChangeSizeEvent;
 import com.spinyowl.legui.system.context.Context;
-import com.spinyowl.legui.system.context.GLFWContext;
 
 /**
  * Layout interface..
