@@ -1,5 +1,6 @@
 package com.spinyowl.legui.system.context;
 
+import static com.spinyowl.legui.system.renderer.nvg.NvgRenderer.NVG_CONTEXT;
 import static org.lwjgl.glfw.GLFW.GLFW_ICONIFIED;
 import static org.lwjgl.glfw.GLFW.GLFW_TRUE;
 import static org.lwjgl.glfw.GLFW.glfwGetFramebufferSize;
@@ -18,7 +19,7 @@ import org.joml.Vector2f;
 import org.joml.Vector2i;
 
 
-public class GLFWContext extends Context {
+public class GLFWContext extends NvgBasedContext {
 
   static {
     Configuration.getInstance();
@@ -262,5 +263,10 @@ public class GLFWContext extends Context {
    */
   public void setIconified(boolean iconified) {
     this.iconified = iconified;
+  }
+
+  @Override
+  public long getNanoVGContext() {
+    return (long) contextData.get(NVG_CONTEXT);
   }
 }
