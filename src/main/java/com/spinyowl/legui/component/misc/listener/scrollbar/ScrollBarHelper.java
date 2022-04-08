@@ -4,15 +4,15 @@ import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.ScrollBar;
 import com.spinyowl.legui.component.event.scrollbar.ScrollBarChangeValueEvent;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 
 public final class ScrollBarHelper {
 
   private ScrollBarHelper() {
   }
 
-  public static void updateScrollBarValue(double offset, Context context, Frame frame,
-      ScrollBar scrollBar) {
+  public static void updateScrollBarValue(double offset, GLFWContext context, Frame frame,
+                                          ScrollBar scrollBar) {
     float maxValue = scrollBar.getMaxValue();
     float minValue = scrollBar.getMinValue();
     float curValue = scrollBar.getCurValue();

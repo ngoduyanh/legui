@@ -1,6 +1,5 @@
 package com.spinyowl.legui.demo;
 
-import static com.spinyowl.legui.style.color.ColorUtil.rgba;
 import static org.lwjgl.glfw.GLFW.GLFW_DONT_CARE;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_ESCAPE;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_F;
@@ -31,17 +30,12 @@ import com.spinyowl.legui.animation.Animator;
 import com.spinyowl.legui.animation.AnimatorProvider;
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
-import com.spinyowl.legui.event.WindowSizeEvent;
-import com.spinyowl.legui.listener.WindowSizeEventListener;
 import com.spinyowl.legui.style.Style.DisplayType;
 import com.spinyowl.legui.style.Style.PositionType;
 import com.spinyowl.legui.style.color.ColorConstants;
-import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.layout.LayoutManager;
 import com.spinyowl.legui.system.renderer.Renderer;
-import com.spinyowl.legui.theme.Themes;
-import com.spinyowl.legui.theme.colored.FlatColoredTheme;
 import org.joml.Vector2i;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.glfw.GLFWKeyCallbackI;
@@ -58,7 +52,7 @@ public class Example {
   private static boolean toggleFullscreen = false;
   private static boolean fullscreen = false;
   private static ExampleGui gui;
-  private static Context context;
+  private static GLFWContext context;
 
   //    private static String json =
   // IOUtil.loadResourceAsString("com/spinyowl/legui/demo/json.json", 1024);

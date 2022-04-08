@@ -36,7 +36,7 @@ import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.style.border.SimpleLineBorder;
 import com.spinyowl.legui.style.color.ColorConstants;
 import com.spinyowl.legui.system.context.CallbackKeeper;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.context.DefaultCallbackKeeper;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessor;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessorImpl;
@@ -69,7 +69,7 @@ public class MultipleWindowsMultipleThreadsExample {
 
   private static long[] windows = new long[WINDOW_COUNT];
   private static Renderer[] renderers = new NvgRenderer[WINDOW_COUNT];
-  private static Context[] contexts = new Context[WINDOW_COUNT];
+  private static GLFWContext[] contexts = new GLFWContext[WINDOW_COUNT];
   private static Frame[] frames = new Frame[WINDOW_COUNT];
   private static CallbackKeeper[] keepers = new DefaultCallbackKeeper[WINDOW_COUNT];
   private static SystemEventProcessor[] systemEventProcessors = new SystemEventProcessor[WINDOW_COUNT];
@@ -244,7 +244,7 @@ public class MultipleWindowsMultipleThreadsExample {
 
       frames[i] = frame;
 
-      contexts[i] = new Context(windows[i]);
+      contexts[i] = new GLFWContext(windows[i]);
       keepers[i] = new DefaultCallbackKeeper();
 
       CallbackKeeper.registerCallbacks(windows[i], keepers[i]);

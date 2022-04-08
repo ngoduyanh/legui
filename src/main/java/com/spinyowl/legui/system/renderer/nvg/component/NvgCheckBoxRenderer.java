@@ -13,7 +13,7 @@ import com.spinyowl.legui.component.optional.align.VerticalAlign;
 import com.spinyowl.legui.icon.Icon;
 import com.spinyowl.legui.style.Style;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgText;
 import org.joml.Vector2f;
 import org.joml.Vector2fc;
@@ -23,7 +23,7 @@ import org.joml.Vector4f;
 public class NvgCheckBoxRenderer extends NvgDefaultComponentRenderer<CheckBox> {
 
   @Override
-  public void renderSelf(CheckBox checkBox, Context context, long nanovg) {
+  public void renderSelf(CheckBox checkBox, GLFWContext context, long nanovg) {
     createScissor(nanovg, checkBox);
     {
       Style style = checkBox.getStyle();

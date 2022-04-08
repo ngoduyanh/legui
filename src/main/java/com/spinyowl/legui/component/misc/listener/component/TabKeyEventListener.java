@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.misc.listener.component;
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.event.KeyEvent;
 import com.spinyowl.legui.listener.EventListener;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -30,10 +30,10 @@ public class TabKeyEventListener implements EventListener<KeyEvent> {
       boolean shiftPressed = (event.getMods() & GLFW.GLFW_MOD_SHIFT) != 0;
       if (controlPressed && !shiftPressed) {
         Component next = findNext(event.getTargetComponent());
-        Context.setFocusedGui(next, event.getContext(), event.getFrame());
+        GLFWContext.setFocusedGui(next, event.getContext(), event.getFrame());
       } else if (controlPressed) {
         Component prev = findPrev(event.getTargetComponent());
-        Context.setFocusedGui(prev, event.getContext(), event.getFrame());
+        GLFWContext.setFocusedGui(prev, event.getContext(), event.getFrame());
       }
     }
   }

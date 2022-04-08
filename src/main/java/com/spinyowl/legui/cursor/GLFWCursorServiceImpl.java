@@ -1,6 +1,6 @@
 package com.spinyowl.legui.cursor;
 
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import org.lwjgl.glfw.GLFW;
@@ -14,7 +14,7 @@ public class GLFWCursorServiceImpl implements CursorService {
   }
 
   @Override
-  public void setCursor(Cursor cursor, Context context) {
+  public void setCursor(Cursor cursor, GLFWContext context) {
     if (cursor == null) {
       return;
     }

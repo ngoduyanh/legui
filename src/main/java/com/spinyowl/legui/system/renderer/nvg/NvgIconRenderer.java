@@ -4,7 +4,7 @@ import static com.spinyowl.legui.system.renderer.nvg.NvgRenderer.NVG_CONTEXT;
 
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.icon.Icon;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.IconRenderer;
 import org.joml.Vector2f;
 
@@ -21,7 +21,7 @@ public abstract class NvgIconRenderer<I extends Icon> extends IconRenderer<I> {
    * @param context   context.
    */
   @Override
-  public void renderIcon(I icon, Component component, Context context) {
+  public void renderIcon(I icon, Component component, GLFWContext context) {
     if (icon == null) {
       return;
     }
@@ -37,7 +37,7 @@ public abstract class NvgIconRenderer<I extends Icon> extends IconRenderer<I> {
    * @param context   context.
    * @param nanovg    nanoVG context.
    */
-  protected abstract void renderIcon(I icon, Component component, Context context, long nanovg);
+  protected abstract void renderIcon(I icon, Component component, GLFWContext context, long nanovg);
 
 
   /**

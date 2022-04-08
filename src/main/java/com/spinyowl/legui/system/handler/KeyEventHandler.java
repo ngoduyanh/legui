@@ -18,7 +18,7 @@ import com.spinyowl.legui.input.KeyMod;
 import com.spinyowl.legui.input.Keyboard;
 import com.spinyowl.legui.input.KeyboardKey;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.event.SystemKeyEvent;
 import java.util.HashSet;
 import java.util.Set;
@@ -29,7 +29,7 @@ import java.util.Set;
 public class KeyEventHandler implements SystemEventHandler<SystemKeyEvent> {
 
   @Override
-  public void handle(SystemKeyEvent event, Frame frame, Context context) {
+  public void handle(SystemKeyEvent event, Frame frame, GLFWContext context) {
     int keyCode = event.key;
     KeyboardKey key = new KeyboardKey(Keyboard.getKeyCode(event.key), event.key);
 

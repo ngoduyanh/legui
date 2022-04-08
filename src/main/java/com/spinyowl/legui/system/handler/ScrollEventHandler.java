@@ -6,7 +6,7 @@ import com.spinyowl.legui.component.Layer;
 import com.spinyowl.legui.event.ScrollEvent;
 import com.spinyowl.legui.input.Mouse;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.event.SystemScrollEvent;
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
 public class ScrollEventHandler extends AbstractSystemEventHandler<SystemScrollEvent> {
 
   @Override
-  protected boolean handle(SystemScrollEvent event, Layer layer, Context context, Frame frame) {
+  protected boolean handle(SystemScrollEvent event, Layer layer, GLFWContext context, Frame frame) {
     List<Component> targetComponentList = SehUtil.getTargetComponentList(layer,
         Mouse.getCursorPosition());
     for (Component component : targetComponentList) {

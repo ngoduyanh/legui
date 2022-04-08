@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.tooltip;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.Tooltip;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import java.util.Objects;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -12,8 +12,8 @@ public class TooltipTextSizeChangeEvent extends Event<Tooltip> {
   private final float width;
   private final float height;
 
-  public TooltipTextSizeChangeEvent(Tooltip targetComponent, Context context, Frame frame,
-      float width, float height) {
+  public TooltipTextSizeChangeEvent(Tooltip targetComponent, GLFWContext context, Frame frame,
+                                    float width, float height) {
     super(targetComponent, context, frame);
     this.width = width;
     this.height = height;

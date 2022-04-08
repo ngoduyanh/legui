@@ -2,7 +2,7 @@ package com.spinyowl.legui.event;
 
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -16,8 +16,8 @@ public class KeyEvent<T extends Component> extends Event<T> {
   private final int mods;
   private final int scancode;
 
-  public KeyEvent(T component, Context context, Frame frame, int action, int key, int mods,
-      int scancode) {
+  public KeyEvent(T component, GLFWContext context, Frame frame, int action, int key, int mods,
+                  int scancode) {
     super(component, context, frame);
     this.action = action;
     this.key = key;

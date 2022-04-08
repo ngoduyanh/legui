@@ -72,7 +72,7 @@ import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.style.border.SimpleLineBorder;
 import com.spinyowl.legui.style.color.ColorConstants;
 import com.spinyowl.legui.system.context.CallbackKeeper;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.layout.LayoutManager;
 import com.spinyowl.legui.system.renderer.Renderer;
 import java.io.IOException;
@@ -178,7 +178,7 @@ public class SingleClassExampleGuiOverGL {
 
   private void loop() {
     Renderer renderer = initializer.getRenderer();
-    Context context = initializer.getContext();
+    GLFWContext context = initializer.getContext();
     while (running) {
       context.updateGlfwWindow();
       Vector2i windowSize = context.getFramebufferSize();

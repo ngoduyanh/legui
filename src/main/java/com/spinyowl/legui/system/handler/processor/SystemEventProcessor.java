@@ -2,7 +2,7 @@ package com.spinyowl.legui.system.handler.processor;
 
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.system.context.CallbackKeeper;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.event.SystemCharEvent;
 import com.spinyowl.legui.system.event.SystemCharModsEvent;
 import com.spinyowl.legui.system.event.SystemCursorEnterEvent;
@@ -234,7 +234,7 @@ public interface SystemEventProcessor {
    * @param frame   target frame for events.
    * @param context context.
    */
-  void processEvents(Frame frame, Context context);
+  void processEvents(Frame frame, GLFWContext context);
 
   /**
    * Push event.

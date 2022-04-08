@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.checkbox;
 import com.spinyowl.legui.component.CheckBox;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -16,8 +16,8 @@ public class CheckBoxChangeValueEvent<T extends CheckBox> extends Event<T> {
   private final boolean oldValue;
   private final boolean newValue;
 
-  public CheckBoxChangeValueEvent(T component, Context context, Frame frame, boolean oldValue,
-      boolean newValue) {
+  public CheckBoxChangeValueEvent(T component, GLFWContext context, Frame frame, boolean oldValue,
+                                  boolean newValue) {
     super(component, context, frame);
     this.oldValue = oldValue;
     this.newValue = newValue;

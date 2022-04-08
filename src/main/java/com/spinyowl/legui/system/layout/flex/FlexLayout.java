@@ -58,7 +58,7 @@ import com.spinyowl.legui.style.flex.FlexStyle;
 import com.spinyowl.legui.style.length.Length;
 import com.spinyowl.legui.style.length.LengthType;
 import com.spinyowl.legui.style.length.Unit;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.layout.Layout;
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +87,7 @@ public class FlexLayout implements Layout {
    * @param context context (used for event generation).
    */
   @Override
-  public void layout(Component parent, Frame frame, Context context) {
+  public void layout(Component parent, Frame frame, GLFWContext context) {
 //    if (parent.isEmpty()) {
 //      return;
 //    }
@@ -130,7 +130,7 @@ public class FlexLayout implements Layout {
     YGConfigFree(yogaConfig);
   }
 
-  private void updateComponent(Frame frame, Context context, Component component, Long yogaNode) {
+  private void updateComponent(Frame frame, GLFWContext context, Component component, Long yogaNode) {
     Vector2f newPos = new Vector2f(YGNodeLayoutGetLeft(yogaNode), YGNodeLayoutGetTop(yogaNode));
     Vector2f oldPos = component.getPosition();
     component.setPosition(newPos);

@@ -5,7 +5,7 @@ import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.Layer;
 import com.spinyowl.legui.event.WindowRefreshEvent;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.event.SystemWindowRefreshEvent;
 import java.util.List;
 
@@ -14,13 +14,13 @@ public class WindowRefreshEventHandler extends
     AbstractSystemEventHandler<SystemWindowRefreshEvent> {
 
   @Override
-  protected boolean handle(SystemWindowRefreshEvent event, Layer layer, Context context,
+  protected boolean handle(SystemWindowRefreshEvent event, Layer layer, GLFWContext context,
       Frame frame) {
     pushEvent(layer, context, frame);
     return false;
   }
 
-  private void pushEvent(Component component, Context context, Frame frame) {
+  private void pushEvent(Component component, GLFWContext context, Frame frame) {
     if (!(component.isVisible())) {
       return;
     }

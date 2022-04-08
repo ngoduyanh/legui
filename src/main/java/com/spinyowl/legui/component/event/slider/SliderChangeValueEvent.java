@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.slider;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.Slider;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -33,8 +33,8 @@ public class SliderChangeValueEvent<T extends Slider> extends Event<T> {
    * @param newValue  new slider value.
    * @param frame     frame.
    */
-  public SliderChangeValueEvent(T component, Context context, Frame frame, float oldValue,
-      float newValue) {
+  public SliderChangeValueEvent(T component, GLFWContext context, Frame frame, float oldValue,
+                                float newValue) {
     super(component, context, frame);
     this.oldValue = oldValue;
     this.newValue = newValue;

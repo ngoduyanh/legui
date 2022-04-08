@@ -33,7 +33,7 @@ import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.style.border.SimpleLineBorder;
 import com.spinyowl.legui.style.color.ColorConstants;
 import com.spinyowl.legui.system.context.CallbackKeeper;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.context.DefaultCallbackKeeper;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessor;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessorImpl;
@@ -65,7 +65,7 @@ public class MultipleWindowsExample {
     int N = 3;
     long[] windows = new long[N];
     Renderer[] renderers = new NvgRenderer[N];
-    Context[] contexts = new Context[N];
+    GLFWContext[] contexts = new GLFWContext[N];
     Frame[] frames = new Frame[N];
     CallbackKeeper[] keepers = new DefaultCallbackKeeper[N];
     SystemEventProcessor[] systemEventProcessors = new SystemEventProcessor[N];
@@ -88,7 +88,7 @@ public class MultipleWindowsExample {
       renderers[i].initialize();
       createGuiElements(frames[i] = new Frame(WIDTH, HEIGHT));
 
-      contexts[i] = new Context(windows[i]);
+      contexts[i] = new GLFWContext(windows[i]);
 
       keepers[i] = new DefaultCallbackKeeper();
       CallbackKeeper.registerCallbacks(windows[i], keepers[i]);

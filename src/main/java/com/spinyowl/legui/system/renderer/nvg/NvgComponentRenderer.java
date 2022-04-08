@@ -5,7 +5,7 @@ import static com.spinyowl.legui.system.renderer.nvg.NvgRenderer.NVG_CONTEXT;
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.style.border.SimpleLineBorder;
 import com.spinyowl.legui.style.color.ColorConstants;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.ComponentRenderer;
 import com.spinyowl.legui.system.renderer.nvg.border.NvgSimpleLineBorderRenderer;
 import com.spinyowl.legui.util.Utilites;
@@ -33,7 +33,7 @@ public abstract class NvgComponentRenderer<C extends Component> extends Componen
    * @param context   legui context.
    */
   @Override
-  public void renderComponent(C component, Context context) {
+  public void renderComponent(C component, GLFWContext context) {
     long nanovgContext = (long) context.getContextData().get(NVG_CONTEXT);
     if (component.isVisible() && (component.keepRendering() || Utilites.visibleInParents(
         component))) {
@@ -57,6 +57,6 @@ public abstract class NvgComponentRenderer<C extends Component> extends Componen
    * @param context   legui context.
    * @param nanovg    nanovg context pointer.
    */
-  protected abstract void renderComponent(C component, Context context, long nanovg);
+  protected abstract void renderComponent(C component, GLFWContext context, long nanovg);
 
 }

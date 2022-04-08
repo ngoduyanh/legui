@@ -5,7 +5,7 @@ import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.Layer;
 import com.spinyowl.legui.event.WindowIconifyEvent;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.event.SystemWindowIconifyEvent;
 import java.util.List;
 
@@ -14,14 +14,14 @@ public class WindowIconifyEventHandler extends
     AbstractSystemEventHandler<SystemWindowIconifyEvent> {
 
   @Override
-  protected boolean handle(SystemWindowIconifyEvent event, Layer layer, Context context,
+  protected boolean handle(SystemWindowIconifyEvent event, Layer layer, GLFWContext context,
       Frame frame) {
     pushEvent(layer, event, context, frame);
     return false;
   }
 
 
-  private void pushEvent(Component component, SystemWindowIconifyEvent event, Context context,
+  private void pushEvent(Component component, SystemWindowIconifyEvent event, GLFWContext context,
       Frame frame) {
     if (!(component.isVisible())) {
       return;

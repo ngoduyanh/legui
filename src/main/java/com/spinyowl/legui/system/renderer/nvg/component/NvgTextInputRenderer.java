@@ -27,7 +27,7 @@ import com.spinyowl.legui.input.Mouse;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.style.Style;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgColorUtil;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgShapes;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgText;
@@ -56,7 +56,7 @@ public class NvgTextInputRenderer extends NvgDefaultComponentRenderer<TextInput>
    * @param nanovg    nanovg context pointer.
    */
   @Override
-  protected void renderSelf(TextInput component, Context context, long nanovg) {
+  protected void renderSelf(TextInput component, GLFWContext context, long nanovg) {
     runWithScissor(nanovg, component, () -> {
       Vector2f pos = component.getAbsolutePosition();
       Vector2f size = component.getSize();
@@ -81,8 +81,8 @@ public class NvgTextInputRenderer extends NvgDefaultComponentRenderer<TextInput>
     });
   }
 
-  private void renderText(Context leguiContext, long context, TextInput gui, Vector2f size,
-      Vector4f rect, Vector4f bc) {
+  private void renderText(GLFWContext leguiContext, long context, TextInput gui, Vector2f size,
+                          Vector4f rect, Vector4f bc) {
 
     String font = getStyle(gui, Style::getFont, FontRegistry.getDefaultFont());
     // switch to default font if font not found in nanovg.

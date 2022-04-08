@@ -4,7 +4,7 @@ import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.listener.processor.EventProcessor;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.system.context.CallbackKeeper;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.context.DefaultCallbackKeeper;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessor;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessorImpl;
@@ -15,7 +15,7 @@ public class DefaultInitializer {
 
   private long window;
   private Frame frame;
-  private Context context;
+  private GLFWContext context;
   private EventProcessor eventProcessor;
   private SystemEventProcessor systemEventProcessor;
   private CallbackKeeper callbackKeeper;
@@ -27,7 +27,7 @@ public class DefaultInitializer {
 
     // We need to create legui context which shared by renderer and event processor.
     // Also we need to pass event processor for ui events such as click on component, key typing and etc.
-    context = new Context(window);
+    context = new GLFWContext(window);
 
     // We need to create callback keeper which will hold all of callbacks.
     // These callbacks will be used in initialization of system event processor
@@ -47,7 +47,7 @@ public class DefaultInitializer {
     renderer = new NvgRenderer();
   }
 
-  public Context getContext() {
+  public GLFWContext getContext() {
     return context;
   }
 

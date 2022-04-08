@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.button;
 import com.spinyowl.legui.component.Button;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -20,8 +20,8 @@ public class ButtonContentChangeEvent extends Event<Button> {
    */
   private final String newValue;
 
-  public ButtonContentChangeEvent(Button component, Context context, Frame frame, String oldValue,
-      String newValue) {
+  public ButtonContentChangeEvent(Button component, GLFWContext context, Frame frame, String oldValue,
+                                  String newValue) {
     super(component, context, frame);
     this.oldValue = oldValue;
     this.newValue = newValue;

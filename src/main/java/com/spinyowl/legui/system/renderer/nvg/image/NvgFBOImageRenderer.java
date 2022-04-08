@@ -6,7 +6,7 @@ import static org.lwjgl.opengl.GL30.GL_MAJOR_VERSION;
 import static org.lwjgl.opengl.GL30.GL_MINOR_VERSION;
 
 import com.spinyowl.legui.image.FBOImage;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.nvg.NvgImageReferenceManager;
 import com.spinyowl.legui.system.renderer.nvg.NvgImageRenderer;
 import java.util.Map;
@@ -74,7 +74,7 @@ public class NvgFBOImageRenderer extends NvgImageRenderer<FBOImage> {
    */
   @Override
   protected void renderImage(FBOImage image, Vector2fc position, Vector2fc size,
-      Map<String, Object> properties, Context context, long nanovg) {
+                             Map<String, Object> properties, GLFWContext context, long nanovg) {
 
     NvgImageReferenceManager manager = NvgImageReferenceManager.getInstance();
     int imageRef = manager.getImageReference(image, nanovg);

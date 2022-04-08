@@ -18,7 +18,7 @@ import com.spinyowl.legui.image.Image;
 import com.spinyowl.legui.style.Border;
 import com.spinyowl.legui.style.font.Font;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.AbstractRenderer;
 import com.spinyowl.legui.system.renderer.BorderRenderer;
 import com.spinyowl.legui.system.renderer.ComponentRenderer;
@@ -65,7 +65,7 @@ public class NvgRenderer extends AbstractRenderer {
    * @param component component for which should be rendered border.
    * @param context   context.
    */
-  public static void renderBorder(Component component, Context context) {
+  public static void renderBorder(Component component, GLFWContext context) {
     Border border = component.getStyle().getBorder();
     if (border != null && border.isEnabled()) {
       // Render border
@@ -82,7 +82,7 @@ public class NvgRenderer extends AbstractRenderer {
    * @param context   context.
    * @param nanovg    nanovg context.
    */
-  public static void renderBorderWScissor(Component component, Context context, long nanovg) {
+  public static void renderBorderWScissor(Component component, GLFWContext context, long nanovg) {
     NvgRenderUtils.createScissor(nanovg, component);
     {
       renderBorder(component, context);
@@ -97,7 +97,7 @@ public class NvgRenderer extends AbstractRenderer {
    * @param component icon owner.
    * @param context   context.
    */
-  public static void renderIcon(Icon icon, Component component, Context context) {
+  public static void renderIcon(Icon icon, Component component, GLFWContext context) {
     if (icon != null && component != null) {
       RendererProvider.getInstance().getIconRenderer(icon.getClass())
           .render(icon, component, context);
@@ -113,7 +113,7 @@ public class NvgRenderer extends AbstractRenderer {
    * @param context  context.
    */
   public static void renderImage(Image image, Vector2fc position, Vector2fc size,
-      Map<String, Object> properties, Context context) {
+      Map<String, Object> properties, GLFWContext context) {
     if (image != null) {
       RendererProvider.getInstance().getImageRenderer(image.getClass())
           .render(image, position, size, properties, context);
@@ -151,7 +151,7 @@ public class NvgRenderer extends AbstractRenderer {
   }
 
   @Override
-  protected void preRender(Context context) {
+  protected void preRender(GLFWContext context) {
     loadFontsToNvg();
     context.getContextData().put(NVG_CONTEXT, nvgContext);
 
@@ -164,7 +164,7 @@ public class NvgRenderer extends AbstractRenderer {
   }
 
   @Override
-  protected void postRender(Context context) {
+  protected void postRender(GLFWContext context) {
     nvgEndFrame(nvgContext);
 
     glDisable(GL_BLEND);

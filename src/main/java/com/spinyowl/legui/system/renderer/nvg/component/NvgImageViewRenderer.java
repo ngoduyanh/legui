@@ -6,7 +6,7 @@ import static com.spinyowl.legui.system.renderer.nvg.util.NvgRenderUtils.createS
 import static com.spinyowl.legui.system.renderer.nvg.util.NvgRenderUtils.resetScissor;
 
 import com.spinyowl.legui.component.ImageView;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgRenderUtils;
 import java.util.HashMap;
 import org.joml.Vector2f;
@@ -15,7 +15,7 @@ import org.joml.Vector2f;
 public class NvgImageViewRenderer extends NvgDefaultComponentRenderer<ImageView> {
 
   @Override
-  protected void renderSelf(ImageView imageView, Context context, long nanovg) {
+  protected void renderSelf(ImageView imageView, GLFWContext context, long nanovg) {
     Vector2f size = imageView.getSize();
     Vector2f position = imageView.getAbsolutePosition();
 

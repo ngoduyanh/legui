@@ -8,7 +8,7 @@ import static org.lwjgl.nanovg.NanoVG.nvgImagePattern;
 import static org.lwjgl.nanovg.NanoVG.nvgRoundedRectVarying;
 
 import com.spinyowl.legui.image.Image;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.ImageRenderer;
 import java.util.Map;
 import org.joml.Vector2fc;
@@ -30,7 +30,7 @@ public abstract class NvgImageRenderer<I extends Image> extends ImageRenderer<I>
    */
   @Override
   public void renderImage(I image, Vector2fc position, Vector2fc size,
-      Map<String, Object> properties, Context context) {
+      Map<String, Object> properties, GLFWContext context) {
     if (image == null) {
       return;
     }
@@ -49,7 +49,7 @@ public abstract class NvgImageRenderer<I extends Image> extends ImageRenderer<I>
    * @param properties properties map.
    */
   protected abstract void renderImage(I image, Vector2fc position, Vector2fc size,
-      Map<String, Object> properties, Context context, long nanovg);
+                                      Map<String, Object> properties, GLFWContext context, long nanovg);
 
   /**
    * Default implementation for image rendering where imageRef is nanovg image reference

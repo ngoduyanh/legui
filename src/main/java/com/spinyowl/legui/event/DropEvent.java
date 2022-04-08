@@ -2,7 +2,7 @@ package com.spinyowl.legui.event;
 
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import java.util.List;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -14,7 +14,7 @@ public class DropEvent<T extends Component> extends Event<T> {
 
   private List<String> files;
 
-  public DropEvent(T component, Context context, Frame frame, List<String> files) {
+  public DropEvent(T component, GLFWContext context, Frame frame, List<String> files) {
     super(component, context, frame);
     this.files = files;
   }

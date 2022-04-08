@@ -5,7 +5,7 @@ import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.Layer;
 import com.spinyowl.legui.event.WindowPosEvent;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.event.SystemWindowPosEvent;
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class WindowPosEventHandler extends AbstractSystemEventHandler<SystemWind
    * @return true if this event was handled and should not be handled more.
    */
   @Override
-  protected boolean handle(SystemWindowPosEvent event, Layer layer, Context context, Frame frame) {
+  protected boolean handle(SystemWindowPosEvent event, Layer layer, GLFWContext context, Frame frame) {
     pushEvent(layer, event, context, frame);
     return false;
   }
@@ -36,7 +36,7 @@ public class WindowPosEventHandler extends AbstractSystemEventHandler<SystemWind
    * @param event     event to push.
    * @param context   context.
    */
-  private void pushEvent(Component component, SystemWindowPosEvent event, Context context,
+  private void pushEvent(Component component, SystemWindowPosEvent event, GLFWContext context,
       Frame frame) {
     if (!(component.isVisible())) {
       return;

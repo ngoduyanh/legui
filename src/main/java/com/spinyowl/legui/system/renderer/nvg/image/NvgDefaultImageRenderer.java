@@ -6,7 +6,7 @@ import com.spinyowl.legui.component.optional.align.VerticalAlign;
 import com.spinyowl.legui.image.Image;
 import com.spinyowl.legui.style.color.ColorConstants;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.nvg.NvgImageRenderer;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgShapes;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgText;
@@ -33,7 +33,7 @@ public class NvgDefaultImageRenderer<I extends Image> extends NvgImageRenderer<I
    */
   @Override
   protected void renderImage(I image, Vector2fc position, Vector2fc size,
-      Map<String, Object> properties, Context context, long nanovg) {
+                             Map<String, Object> properties, GLFWContext context, long nanovg) {
 
     float x = position.x();
     float y = position.y();

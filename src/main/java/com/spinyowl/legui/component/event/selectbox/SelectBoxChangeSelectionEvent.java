@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.selectbox;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.component.SelectBox;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -14,8 +14,8 @@ public class SelectBoxChangeSelectionEvent<T> extends Event<SelectBox<T>> {
   private final T oldValue;
   private final T newValue;
 
-  public SelectBoxChangeSelectionEvent(SelectBox<T> component, Context context, Frame frame,
-      T oldValue, T newValue) {
+  public SelectBoxChangeSelectionEvent(SelectBox<T> component, GLFWContext context, Frame frame,
+                                       T oldValue, T newValue) {
     super(component, context, frame);
     this.oldValue = oldValue;
     this.newValue = newValue;

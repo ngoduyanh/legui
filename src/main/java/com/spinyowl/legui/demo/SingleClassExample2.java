@@ -40,7 +40,7 @@ import com.spinyowl.legui.style.flex.FlexStyle.AlignItems;
 import com.spinyowl.legui.style.flex.FlexStyle.JustifyContent;
 import com.spinyowl.legui.style.font.FontRegistry;
 import com.spinyowl.legui.system.context.CallbackKeeper;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.context.DefaultCallbackKeeper;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessor;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessorImpl;
@@ -103,7 +103,7 @@ public class SingleClassExample2 {
     // We need to create legui context which shared by renderer and event processor.
     // Also we need to pass event processor for ui events such as click on component, key typing and
     // etc.
-    Context context = new Context(window);
+    GLFWContext context = new GLFWContext(window);
 
     // We need to create callback keeper which will hold all of callbacks.
     // These callbacks will be used in initialization of system event processor

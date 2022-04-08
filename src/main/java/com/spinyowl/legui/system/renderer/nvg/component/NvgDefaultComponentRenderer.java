@@ -11,7 +11,7 @@ import static org.lwjgl.nanovg.NanoVG.nvgSave;
 
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.icon.Icon;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.RendererProvider;
 import com.spinyowl.legui.system.renderer.nvg.NvgComponentRenderer;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgRenderUtils;
@@ -33,7 +33,7 @@ public class NvgDefaultComponentRenderer<C extends Component> extends NvgCompone
    * @param nanovg    nanovg context pointer.
    */
   @Override
-  protected void renderComponent(C component, Context context, long nanovg) {
+  protected void renderComponent(C component, GLFWContext context, long nanovg) {
     if (component.isVisible() && component.getSize().lengthSquared() > 0.01) {
       renderSelf(component, context, nanovg);
       renderChildComponents(component, context, nanovg);
@@ -48,7 +48,7 @@ public class NvgDefaultComponentRenderer<C extends Component> extends NvgCompone
    * @param context   context.
    * @param nanovg    nanovg context pointer.
    */
-  protected void renderSelf(C component, Context context, long nanovg) {
+  protected void renderSelf(C component, GLFWContext context, long nanovg) {
     createScissor(nanovg, component);
     {
       renderBackground(component, context, nanovg);
@@ -56,7 +56,7 @@ public class NvgDefaultComponentRenderer<C extends Component> extends NvgCompone
     resetScissor(nanovg);
   }
 
-  protected void renderBackground(C component, Context context, long nanovg) {
+  protected void renderBackground(C component, GLFWContext context, long nanovg) {
     Icon bgIcon = getStyle(component, s -> s.getBackground().getIcon());
     Vector4f bgColor = getStyle(component, s -> s.getBackground().getColor());
     Vector4f cornerRadius = getBorderRadius(component);
@@ -79,7 +79,7 @@ public class NvgDefaultComponentRenderer<C extends Component> extends NvgCompone
    * @param context   context.
    * @param nanovg    nanovg context pointer.
    */
-  protected void renderChildComponents(C component, Context context, long nanovg) {
+  protected void renderChildComponents(C component, GLFWContext context, long nanovg) {
     for (Component child : component.getChildComponents()) {
       RendererProvider.getInstance().getComponentRenderer(child.getClass()).render(child, context);
     }
@@ -92,7 +92,7 @@ public class NvgDefaultComponentRenderer<C extends Component> extends NvgCompone
    * @param context   context.
    * @param nanovg    nanovg context pointer.
    */
-  protected void renderBorder(C component, Context context, long nanovg) {
+  protected void renderBorder(C component, GLFWContext context, long nanovg) {
     renderBorderWScissor(component, context, nanovg);
   }
 }

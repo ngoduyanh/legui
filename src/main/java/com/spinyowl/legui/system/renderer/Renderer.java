@@ -1,14 +1,14 @@
 package com.spinyowl.legui.system.renderer;
 
 import com.spinyowl.legui.component.Frame;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 
 
 public interface Renderer {
 
   void initialize();
 
-  void render(Frame frame, Context context);
+  void render(Frame frame, GLFWContext context);
 
   void destroy();
 }

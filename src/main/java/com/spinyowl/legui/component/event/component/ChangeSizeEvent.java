@@ -3,7 +3,7 @@ package com.spinyowl.legui.component.event.component;
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.event.Event;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -14,8 +14,8 @@ public class ChangeSizeEvent<T extends Component> extends Event<T> {
   private final Vector2fc oldSize;
   private final Vector2fc newSize;
 
-  public ChangeSizeEvent(T targetComponent, Context context, Frame frame, Vector2fc oldSize,
-      Vector2fc newSize) {
+  public ChangeSizeEvent(T targetComponent, GLFWContext context, Frame frame, Vector2fc oldSize,
+                         Vector2fc newSize) {
     super(targetComponent, context, frame);
     this.oldSize = oldSize;
     this.newSize = newSize;

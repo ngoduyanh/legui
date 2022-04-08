@@ -1,9 +1,9 @@
 package com.spinyowl.legui.cursor;
 
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 
 public interface CursorService {
 
-  void setCursor(Cursor cursor, Context context);
+  void setCursor(Cursor cursor, GLFWContext context);
 
 }

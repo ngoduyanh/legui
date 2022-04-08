@@ -2,7 +2,7 @@ package com.spinyowl.legui.event;
 
 import com.spinyowl.legui.component.Component;
 import com.spinyowl.legui.component.Frame;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -14,7 +14,7 @@ public class ScrollEvent<T extends Component> extends Event<T> {
   private final double xoffset;
   private final double yoffset;
 
-  public ScrollEvent(T component, Context context, Frame frame, double xoffset, double yoffset) {
+  public ScrollEvent(T component, GLFWContext context, Frame frame, double xoffset, double yoffset) {
     super(component, context, frame);
     this.xoffset = xoffset;
     this.yoffset = yoffset;

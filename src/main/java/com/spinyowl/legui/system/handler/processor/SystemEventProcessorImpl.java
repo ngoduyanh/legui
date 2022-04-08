@@ -1,7 +1,7 @@
 package com.spinyowl.legui.system.handler.processor;
 
 import com.spinyowl.legui.component.Frame;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.event.SystemEvent;
 import com.spinyowl.legui.system.handler.SystemEventHandler;
 import com.spinyowl.legui.system.handler.SystemEventHandlerProvider;
@@ -20,7 +20,7 @@ public class SystemEventProcessorImpl implements SystemEventProcessor {
    * @param frame   the frame
    * @param context the context
    */
-  public void processEvents(Frame frame, Context context) {
+  public void processEvents(Frame frame, GLFWContext context) {
     swap();
 
     for (SystemEvent event = second.poll(); event != null; event = second.poll()) {

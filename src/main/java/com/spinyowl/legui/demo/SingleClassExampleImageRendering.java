@@ -26,7 +26,7 @@ import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.style.Style;
 import com.spinyowl.legui.style.color.ColorConstants;
 import com.spinyowl.legui.system.context.CallbackKeeper;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.context.DefaultCallbackKeeper;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessor;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessorImpl;
@@ -72,7 +72,7 @@ public class SingleClassExampleImageRendering {
 
     // We need to create legui context which shared by renderer and event processor.
     // Also we need to pass event processor for ui events such as click on component, key typing and etc.
-    Context context = new Context(window);
+    GLFWContext context = new GLFWContext(window);
 
     // We need to create callback keeper which will hold all of callbacks.
     // These callbacks will be used in initialization of system event processor

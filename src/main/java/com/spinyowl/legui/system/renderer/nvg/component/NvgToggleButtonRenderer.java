@@ -16,7 +16,7 @@ import com.spinyowl.legui.component.optional.align.VerticalAlign;
 import com.spinyowl.legui.icon.Icon;
 import com.spinyowl.legui.style.Style;
 import com.spinyowl.legui.style.font.FontRegistry;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgShapes;
 import com.spinyowl.legui.system.renderer.nvg.util.NvgText;
 import org.joml.Vector2f;
@@ -26,7 +26,7 @@ import org.joml.Vector4f;
 public class NvgToggleButtonRenderer extends NvgDefaultComponentRenderer<ToggleButton> {
 
   @Override
-  protected void renderSelf(ToggleButton component, Context context, long nanovg) {
+  protected void renderSelf(ToggleButton component, GLFWContext context, long nanovg) {
     createScissor(nanovg, component);
     {
       Vector2f pos = component.getAbsolutePosition();
@@ -51,7 +51,7 @@ public class NvgToggleButtonRenderer extends NvgDefaultComponentRenderer<ToggleB
   }
 
   private void renderBackground(long nvg, ToggleButton agui, Vector2f pos, Vector2f size,
-      Context context) {
+      GLFWContext context) {
     Icon icon = getStyle(agui, s -> s.getBackground().getIcon());
     Vector4f bgColor = getStyle(agui, s -> s.getBackground().getColor());
     Vector4f cornerRadius = getBorderRadius(agui);

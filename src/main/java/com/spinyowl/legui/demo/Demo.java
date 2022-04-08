@@ -30,7 +30,7 @@ import com.spinyowl.legui.component.Frame;
 import com.spinyowl.legui.listener.processor.EventProcessor;
 import com.spinyowl.legui.listener.processor.EventProcessorProvider;
 import com.spinyowl.legui.system.context.CallbackKeeper;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.context.DefaultCallbackKeeper;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessor;
 import com.spinyowl.legui.system.handler.processor.SystemEventProcessorImpl;
@@ -66,7 +66,7 @@ public abstract class Demo {
   private GLCapabilities glCapabilities;
 
   private long[] monitors;
-  private Context context;
+  private GLFWContext context;
 
   private Frame frame;
   private long window;
@@ -198,7 +198,7 @@ public abstract class Demo {
     glfwShowWindow(window);
     createGuiElements(frame);
 
-    context = new Context(window);
+    context = new GLFWContext(window);
     keeper = new DefaultCallbackKeeper();
 
     CallbackKeeper.registerCallbacks(window, keeper);

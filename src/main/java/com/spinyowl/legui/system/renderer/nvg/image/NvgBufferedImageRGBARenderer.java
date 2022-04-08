@@ -4,7 +4,7 @@ package com.spinyowl.legui.system.renderer.nvg.image;
 import static org.lwjgl.nanovg.NanoVG.nvgCreateImageRGBA;
 
 import com.spinyowl.legui.image.BufferedImageRGBA;
-import com.spinyowl.legui.system.context.Context;
+import com.spinyowl.legui.system.context.GLFWContext;
 import com.spinyowl.legui.system.renderer.nvg.NvgImageReferenceManager;
 import com.spinyowl.legui.system.renderer.nvg.NvgImageRenderer;
 import java.util.Map;
@@ -53,7 +53,7 @@ public class NvgBufferedImageRGBARenderer extends NvgImageRenderer<BufferedImage
    */
   @Override
   protected void renderImage(BufferedImageRGBA image, Vector2fc position, Vector2fc size,
-      Map<String, Object> properties, Context context, long nanovg) {
+                             Map<String, Object> properties, GLFWContext context, long nanovg) {
 
     NvgImageReferenceManager manager = NvgImageReferenceManager.getInstance();
     int imageRef = manager.getImageReference(image, nanovg);
